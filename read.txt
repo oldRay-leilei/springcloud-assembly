@@ -1,0 +1,11 @@
+ribbon1去调用的ribbon2 如果A调用B 把注解加在A端：
+ribbon1调用ribbon2的时候
+1.把注解@EnableFeignClients加在ribbon1的启动类上
+2.注解@FeignClient(name = "xxx") name属性为被调用者配置里的名称，该注解实在调用方api里的类上加的
+注意：ribbo的配置的里面的命名如果下划线的命名会报id是不合法的
+3.ribbon1调用ribbon2的时候 调用方法名称随意命名 但是@RequestMapping的方法要与调用方法的方法路径相同
+4.如果被调用方ribbon2有参数 ribbon1在调用方法的参数加注解@RequestParam
+5.在ribbon1的feignApi包中 testFeignController调用ribbon2的接口
+6.然后callfeignApi的接口中 testFeignController使用@Autowired注入CallFeignController，然后调用testFeignController中的testFeignController里调用的ribbo2接口中的方法
+
+hystrix熔断器

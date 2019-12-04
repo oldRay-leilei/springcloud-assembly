@@ -1,0 +1,7 @@
+# Project exclude paths
+/consul_ribbon1/target/
+/consul_ribbon2/target/
+/eureka_clients/target/
+/eureka_server1/target/
+/eureka_server2/target/
+/rureka_server3/target/

@@ -1,0 +1,10 @@
+server:
+  port: 10016
+spring:
+  application:
+    name: ribbon-server02
+  cloud:
+    consul:
+      discovery:
+        health-check-path: /testHelth
+        health-check-interval: 30s

@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CompilerConfiguration">
+    <annotationProcessing>
+      <profile name="Maven default annotation processors profile" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <module name="consul_ribbon1" />
+        <module name="eureka_server1" />
+        <module name="eureka_clients" />
+        <module name="consul_ribbon2" />
+        <module name="eureka_server2" />
+        <module name="eureka_client" />
+        <module name="rureka_server3" />
+      </profile>
+    </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="eureka_client" target="1.8" />
+      <module name="eureka_client1" target="1.8" />
+    </bytecodeTargetLevel>
+  </component>
+  <component name="JavacSettings">
+    <option name="ADDITIONAL_OPTIONS_OVERRIDE">
+      <module name="consul_ribbon1" options="-parameters" />
+      <module name="consul_ribbon2" options="-parameters" />
+      <module name="eureka_client" options="-parameters" />
+      <module name="eureka_client1" options="-parameters" />
+      <module name="eureka_clients" options="-parameters" />
+      <module name="eureka_server1" options="-parameters" />
+      <module name="eureka_server2" options="-parameters" />
+      <module name="exam_pom" options="-parameters" />
+      <module name="rureka_server3" options="-parameters" />
+    </option>
+  </component>
+</project>
