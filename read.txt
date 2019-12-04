@@ -9,3 +9,17 @@ ribbon1调用ribbon2的时候
 6.然后callfeignApi的接口中 testFeignController使用@Autowired注入CallFeignController，然后调用testFeignController中的testFeignController里调用的ribbo2接口中的方法
 
 hystrix熔断器
+1.首先在调用方的配置文件中配置开启熔断
+feign:
+  hystrix:
+    enabled: true
+2.写错误回调接口
+代表请求错误后应该回调哪一个接口 这样就是简单的服务降级
+3.在错误回调接口实现调用方的接口 这样如果调用方失败就会返回到自己设置的错误回调接口中
+3.错误回调接口中加注解@Component
+3.在调用方api接口中实现注解的@FeignClient(name = "xxx",fallback = xxx.class)
+  name的参数就是自己的被调用方的application.name中自己设定的值
+  fallback的参数就是自己设定的错误回调接口
+zuul网关
+
+gateway网关
