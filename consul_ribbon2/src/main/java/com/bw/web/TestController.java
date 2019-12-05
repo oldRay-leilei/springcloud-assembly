@@ -1,19 +1,24 @@
 package com.bw.web;
 
+import org.springframework.beans.factory.annotation.Value;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 public class TestController {
 
-    @RequestMapping("/testfeign")
-    public String testfeign(String name)
+    @Value("${server.port}")
+    private String port;
+
+    @RequestMapping("/testfeign/{name}")
+    public String testfeign(@PathVariable("name") String name)
     {
-        if(name.equals("1"))
+        if("1".equals(name))
         {
-            throw new RuntimeException("+=========fackbackerror=========");
+            System.out.println("出错了");
         }
-        System.out.println("====================实例被启用============================");
+        System.out.println("-------------------->"+name+"<------------------------------");
         return name;
     }
 }

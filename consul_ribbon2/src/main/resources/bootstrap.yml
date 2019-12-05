@@ -7,4 +7,4 @@ spring:
     consul:
       discovery:
         health-check-path: /testHelth
-        health-check-interval: 30s
+        health-check-interval: 60s

@@ -8,11 +8,12 @@
         <outputRelativeToContentRoot value="true" />
         <module name="consul_ribbon1" />
         <module name="eureka_server1" />
-        <module name="eureka_clients" />
         <module name="consul_ribbon2" />
+        <module name="consul_zuulserver1" />
         <module name="eureka_server2" />
         <module name="eureka_client" />
         <module name="rureka_server3" />
+        <module name="eureka_clients" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
@@ -24,6 +25,7 @@
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
       <module name="consul_ribbon1" options="-parameters" />
       <module name="consul_ribbon2" options="-parameters" />
+      <module name="consul_zuulserver1" options="-parameters" />
       <module name="eureka_client" options="-parameters" />
       <module name="eureka_client1" options="-parameters" />
       <module name="eureka_clients" options="-parameters" />

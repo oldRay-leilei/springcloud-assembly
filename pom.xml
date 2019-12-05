@@ -15,6 +15,7 @@
         <module>eureka_clients</module>
         <module>consul_ribbon1</module>
         <module>consul_ribbon2</module>
+        <module>consul_zuulserver1</module>
     </modules>
     <parent>
         <groupId>org.springframework.boot</groupId>

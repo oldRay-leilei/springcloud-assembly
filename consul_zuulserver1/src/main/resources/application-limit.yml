@@ -1,0 +1,20 @@
+zuul:
+  ratelimit:
+    policy-list:
+      ribbon-server02:
+        - type:
+            - type: url
+              matcher: /zuul
+        - limit: 2
+          refresh-interval: 3
+          quota: 1
+      ribbon-server01:
+        - type:
+            - type: url
+              matcher: /zuul
+        - limit: 2
+          refresh-interval: 3
+          quota: 1
+    repository: consul
+    key-prefix: test
+    enabled: true

@@ -1,0 +1,30 @@
+server:
+  port: 10017
+spring:
+  application:
+    name: zuul-server
+  cloud:
+    consul:
+      discovery:
+        health-check-path: /testHealth
+        health-check-interval: 60s
+  profiles:
+    active: limit
+zuul:
+  prefix: /api
+  routes:
+    ribbon-server02:
+      path: /zuul/**
+      serviceId: ribbon-server02
+      strip-prefix: true
+    ribbon-server01:
+      path: /test/**
+      serviceId: ribbon-server01
+      strip-prefix: true
+#通过zuul配置ribbon的负载均衡
+#ribbon-server02:
+#  ribbon:
+#    NFloadBalancerRuleClassName:
+#     com.netflix.loadbalancer.RandomRule
+
+#引入限流配置
